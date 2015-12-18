@@ -23,8 +23,8 @@
       <ul>
         <li class="marRight20"><a  href="/">home</a></li>
         <li class="marRight20"><a class="active" href="/auth/register">register</a></li>
-        <li class="marRight20"><a href="/auth/login">login</a></li>
-        <li class="marRight20"><a href="/auth/logout">Logout</a></li>
+        <li class="marRight20"><a href="/login">login</a></li>
+        <li class="marRight20"><a href="/logout">Logout</a></li>
       </ul>
     </div>
   </div>
@@ -41,7 +41,7 @@
           </div>
           <div class="border"></div>
           <h2>Subheading goes here</h2>
-            <form method='POST' action='/auth/register'>
+            <form method='POST' action='/register'>
             {!! csrf_field() !!}
             <div class="contact-form margin-top">
               <label> <span>Name</span>

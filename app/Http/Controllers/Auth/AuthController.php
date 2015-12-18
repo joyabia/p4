@@ -28,7 +28,7 @@ class AuthController extends Controller
     protected $redirectPath = '/signin';
 
     # Where should the user be redirected to if their login fails?
-    protected $loginPath = '/auth/login';
+    protected $loginPath = '/login';
 
     # Where should the user be redirected to after logging out?
     protected $redirectAfterLogout = '/';

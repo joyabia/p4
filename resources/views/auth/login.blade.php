@@ -22,8 +22,8 @@
     <div class="menu">
       <ul>
         <li class="marRight20"><a href="/">home</a></li>
-        <li class="marRight20"><a href="/auth/register">register</a></li>
-        <li class="marRight20"><a class="active" href="/auth/login">login</a></li>
+        <li class="marRight20"><a href="/register">register</a></li>
+        <li class="marRight20"><a class="active" href="/login">login</a></li>
         <li class="marRight20"><a href="/auth/logout">logout</a></li>
       </ul>
     </div>
@@ -42,7 +42,7 @@
           </div>
           <div class="border"></div>
           
-          <form method="POST" action="/auth/login">
+          <form method="POST" action="/login">
              <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="contact-form margin-top">
               <label> <span>Email</span>

@@ -13,13 +13,13 @@
 
 // Authentication routes...
 
-Route::get('auth/login', 'Auth\AuthController@getLogin');
-Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('/login', 'Auth\AuthController@getLogin');
+Route::post('/login', 'Auth\AuthController@postLogin');
 
 
 // Registration routes...
-Route::get('auth/register', 'Auth\AuthController@getRegister');
-Route::post('auth/register', 'Auth\AuthController@postRegister');
+Route::get('/register', 'Auth\AuthController@getRegister');
+Route::post('/register', 'Auth\AuthController@postRegister');
 
 
 
@@ -59,7 +59,7 @@ Route::get('/confirm-login-worked', function() {
 
     if($user) {
         echo 'You are logged in.';
-        
+        echo $user;
         foreach($user->kids as $kid){
         	echo $kid->firstname;
         	echo"---------------------";
@@ -72,8 +72,8 @@ Route::get('/confirm-login-worked', function() {
 
 });
 
-Route::get('/home', function () {
+/*Route::get('/home', function () {
 
 	$currentUsersKids = Auth::user()->kids();  
     return view('attendance')->with('currentUsersKids', $currentUsersKids);
-});
+});*/
