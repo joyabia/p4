@@ -24,7 +24,7 @@
         <li class="marRight20"><a href="/">home</a></li>
         <li class="marRight20"><a href="/register">register</a></li>
         <li class="marRight20"><a class="active" href="/login">login</a></li>
-        <li class="marRight20"><a href="/auth/logout">logout</a></li>
+        <li class="marRight20"><a href="/logout">logout</a></li>
       </ul>
     </div>
   </div>

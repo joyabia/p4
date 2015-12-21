@@ -1,7 +1,7 @@
 <html>
 <head>
 
-<title>Login</title>
+<title>Register</title>
 
 
 
@@ -14,6 +14,7 @@
   <div class="header-left-panel">
     <div class="logo-wrap">
       <div class="logo">
+      <div class="img" id="wiz"><img src="images/wizard20.jpg"/></div>
         <h1>Sign-In Wiz</h1>
       </div>
     </div>
@@ -22,7 +23,7 @@
     <div class="menu">
       <ul>
         <li class="marRight20"><a  href="/">home</a></li>
-        <li class="marRight20"><a class="active" href="/auth/register">register</a></li>
+        <li class="marRight20"><a class="active" href="/register">register</a></li>
         <li class="marRight20"><a href="/login">login</a></li>
         <li class="marRight20"><a href="/logout">Logout</a></li>
       </ul>

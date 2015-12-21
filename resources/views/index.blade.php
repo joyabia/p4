@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Sign-In</title>
+<title>Home</title>
 <link href="css/styles.css" rel="stylesheet" type="text/css" />
 <link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
@@ -23,7 +23,7 @@
         <li class="marRight20"><a class="active" href="/">home</a></li>
         <li class="marRight20"><a href="/register">register</a></li>
         <li class="marRight20"><a href="/login">login</a></li>
-        <li class="marRight20"><a href="/contact">contact</a></li>
+        <li class="marRight20"><a href="/logout">logout</a></li>
       </ul>
     </div>
   </div>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
  </script>
-<title>Login</title>
+<title>Logout</title>
 <link href="/css/styles.css" rel="stylesheet" type="text/css" />
 <link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
@@ -14,6 +14,7 @@
   <div class="header-left-panel">
     <div class="logo-wrap">
       <div class="logo">
+      <div class="img" id="wiz"><img src="images/wizard20.jpg"/></div>
         <h1>SIGN-IN WIZ</h1>
       </div>
     </div>
@@ -22,9 +23,9 @@
     <div class="menu">
       <ul>
         <li class="marRight20"><a href="/">home</a></li>
-        <li class="marRight20"><a href="/auth/register">register</a></li>
-        <li class="marRight20"><a class="active" href="/auth/login">login</a></li>
-        <li class="marRight20"><a href="/auth/logout">logout</a></li>
+        <li class="marRight20"><a href="/register">register</a></li>
+        <li class="marRight20"><a  href="/login">login</a></li>
+        <li class="marRight20"><a class="active" href="/logout">logout</a></li>
       </ul>
     </div>
   </div>
@@ -38,7 +39,7 @@
       <div class="mid-panel">
         <div class="mid-panel-content">
           <div class="title">
-            <h1>Thanks for Sign in $kids </h1>
+            
           </div>
           <div class="border"></div>
           

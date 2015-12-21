@@ -13,6 +13,7 @@
 
 // Authentication routes...
 
+
 Route::get('/login', 'Auth\AuthController@getLogin');
 Route::post('/login', 'Auth\AuthController@postLogin');
 
@@ -21,33 +22,13 @@ Route::post('/login', 'Auth\AuthController@postLogin');
 Route::get('/register', 'Auth\AuthController@getRegister');
 Route::post('/register', 'Auth\AuthController@postRegister');
 
+Route::get('/logout', 'Auth\AuthController@getLogout');
 
+//serve the attendance sign-in sign-out form
+Route::get('/signattendance', 'AttendanceController@create');
 
-
-Route::get('/contact', function () {
-    return view('contact');
-});
-
-Route::get('/signin', function () {
-
-	$currentUsersKids = Auth::user()->kids;  
-    return view('attendance')->with('currentUsersKids', $currentUsersKids);
-});
-
-
-
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::get('/register', function () {
-    return view('auth/register');
-});
-
-Route::get('/auth/logout', function () {
-    return view('auth/logout');
-});
-
+//submit attendance form to update database
+Route::post('/submitattendance', 'AttendanceController@store');
 
 Route::get('/confirm-login-worked', function() {
 
@@ -72,8 +53,3 @@ Route::get('/confirm-login-worked', function() {
 
 });
 
-/*Route::get('/home', function () {
-
-	$currentUsersKids = Auth::user()->kids();  
-    return view('attendance')->with('currentUsersKids', $currentUsersKids);
-});*/

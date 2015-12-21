@@ -2,10 +2,12 @@
 
 namespace p4\Http\Controllers;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
+use Auth;
 
 use p4\Http\Requests;
 use p4\Http\Controllers\Controller;
+use Request;
 
 class AttendanceController extends Controller
 {
@@ -26,7 +28,40 @@ class AttendanceController extends Controller
      */
     public function create()
     {
-        //
+
+
+    $user = Auth::user();
+    $currentUsersKids = $user->kids;
+
+    foreach ($currentUsersKids as $kids) {
+
+        $maxid = $kids->attendancestatus()->max('id');
+        $attendance =$kids->attendancestatus()->find($maxid);
+
+        //test kids attendance status
+        if ($attendance["attendanceStatus"] == 'signin'){
+            $newattendstat = "signout";
+            echo $newattendstat;
+        }
+        elseif($attendance["attendanceStatus"] == 'signout')
+        {
+            $newattendstat = 'signin';
+            echo $newattendstat;
+        }
+
+        //build array for a kids attendance parameters
+        $kidcurrentstatus2  = array('id' => $maxid, 'attendstat' => $attendance["attendanceStatus"], 
+            'newattendstat' => $newattendstat,
+        'kid_id' => $attendance['kid_id'], 'picture' => $kids->picture, 'fullname'=>$kids->fullname);
+       $kidcurrentstatus1 [] = $kidcurrentstatus2;
+    }
+
+      
+    
+    return view('attendanceform')->with('currentUsersKids', $currentUsersKids)
+    ->with('user', $user)->with('kidcurrentstatus1', $kidcurrentstatus1);
+
+
     }
 
     /**
@@ -37,8 +72,10 @@ class AttendanceController extends Controller
      */
     public function store(Request $request)
     {
-        $currentUsersKids = Auth::user()->kids->get();  
-        return view('attendance')->with('currentUsersKids', $currentUsersKids);
+        $input = Request::all();
+
+        return $input;
+       
     }
 
     /**
