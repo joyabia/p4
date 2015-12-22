@@ -39,21 +39,19 @@ class AttendanceController extends Controller
         $attendance =$kids->attendancestatus()->find($maxid);
 
         //test kids attendance status
-        if ($attendance["attendanceStatus"] == 'signin'){
-            $newattendstat = "signout";
-            echo $newattendstat;
+        if ($attendance["attendancestatus"] == 1){
+            $stringattendance = "Signed-In";
         }
-        elseif($attendance["attendanceStatus"] == 'signout')
+        elseif($attendance["attendancestatus"] == 0)
         {
-            $newattendstat = 'signin';
-            echo $newattendstat;
+            $stringattendance = "Signed-Out";
         }
 
         //build array for a kids attendance parameters
-        $kidcurrentstatus2  = array('id' => $maxid, 'attendstat' => $attendance["attendanceStatus"], 
-            'newattendstat' => $newattendstat,
-        'kid_id' => $attendance['kid_id'], 'picture' => $kids->picture, 'fullname'=>$kids->fullname);
-       $kidcurrentstatus1 [] = $kidcurrentstatus2;
+        $kidcurrentstatus2  = array('id' => $maxid, 'attendstat' => $attendance["attendancestatus"], 
+        'stringattendance'=> $stringattendance, 'kid_id' => $attendance['kid_id'], 'picture' => $kids->picture, 'fullname'=>$kids->fullname);
+       
+        $kidcurrentstatus1 [] = $kidcurrentstatus2;
     }
 
       

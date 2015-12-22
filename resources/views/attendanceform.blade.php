@@ -39,6 +39,39 @@
  	    margin-bottom: 20px;
  }
 
+ .myButton {
+	-moz-box-shadow:inset -10px 37px 0px -24px #e67a73;
+	-webkit-box-shadow:inset -10px 37px 0px -24px #e67a73;
+	box-shadow:inset -10px 37px 0px -24px #e67a73;
+	background-color:#e4685d;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Georgia;
+	font-size:19px;
+	font-weight:bold;
+	padding:12px 76px;
+	text-decoration:none;
+	text-shadow:1px 2px 2px #b23e35;
+}
+.myButton:hover {
+	background-color:#eb675e;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+#button{
+	margin-left: 40px;
+	margin-right: auto;
+}
+
+
 	</style>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
@@ -87,10 +120,10 @@
 			
 			<img src={{$kid['picture']}}>
 			{{$kid['kid_id']}}
-			<h4> {!!$kid['fullname']!!} current attendance status is {!!$kid['attendstat']!!} </h4>
+			<h4> {!!$kid['fullname']!!} current attendance status is {!!$kid['stringattendance']!!}</h4>
 					
-			<input type="checkbox" name={!!$kid['kid_id']!!} id={!!$kid['kid_id']!!} value={!!$kid['newattendstat']!!}>
-			<label for={!!$kid['kid_id']!!}>{!!$kid['newattendstat']!!} {!!$kid['fullname']!!}</label>
+			<input type="checkbox" name={!!$kid['kid_id']!!} id={!!$kid['kid_id']!!} value=>
+			<label for={!!$kid['kid_id']!!}>{!!$kid['stringattendance']!!} {!!$kid['fullname']!!}</label>
 			
 
 			
@@ -103,7 +136,7 @@
 	</div>
 	
 	</div>
-	<div> <button type="submit" class="button">SUBMIT</button></div>
+	<div id="button"> <button type="submit" class="myButton">SUBMIT</button></div>
 		</form>
 </div>
 <!--- panel wrap div end -->
