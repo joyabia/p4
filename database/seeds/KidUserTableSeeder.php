@@ -16,12 +16,11 @@ class KidUserTableSeeder extends Seeder
     # First, create an array of all the users we want to associate kids with
     # The *key* will be the user email, and the *value* will be an array of tags.
     $users =[
-        ///'jevents.wa@gmail.com' => ['Baron','Mario','Cicero'],
-        'jill@harvard.edu' => ['Lily','Jaydon'],
-        'jamal@harvard.edu' => ['Lily','Jaydon'],
-        //'fancy@gmail.com' => ['Carolina', 'Kacie'],
-        'tara@gmail.com' => ['Christ', 'Zion', 'Beaulah'],
-        'barry@gmail.com' => ['Carolina']
+        'jill@harvard.edu' => ['Delfina','Zoey'],
+        'jamal@harvard.edu' => ['Delfina','Zoey'],
+        'Cleta08@yahoo.com' =>['Kale', 'Derrick', 'Zaria'],
+        'aDavis@yahoo.com' => ['Omari'],
+        'nPrice@yahoo.com' => ['Salvador', 'Otha']
     ];
 
      # Now loop through the above array, creating a new pivot for each user to kid
@@ -29,13 +28,18 @@ class KidUserTableSeeder extends Seeder
 
         # First get the user
         $user = \p4\User::where('email','like',$email)->first();
+        echo nl2br("user " .$user. "\n");
+        
 
         # Now loop through each kid for this book, adding the pivot
-        foreach($kids as $firstName) {
-            $kid = \p4\Kid::where('firstName','LIKE',$firstName)->first();
+        foreach($kids as $firstname) {
+            echo nl2br ("firstname ".$firstname. "\n");
+
+            $kid = \p4\Kid::where('firstname','LIKE',$firstname)->first();
 
             # Connect this user to this kid
             $user->kids()->save($kid);
+
 
         }
     }

@@ -12,16 +12,16 @@ class KidsTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = \Faker\Factory::create();
+   $faker = \Faker\Factory::create();
 
- Kid::truncate();
 
- foreach(range(1,10) as $index)
+ foreach(range(1,15) as $index)
  {
 
  Kid::create([
  'firstname' => $faker->firstName(),
  'lastname' => $faker->lastName(),
+ 'birthday' => $faker->dateTimeThisDecade->format('Y-m-d'),
  'picture'=>('images/kid4.jpg'),
  'created_at' => Carbon\Carbon::now()->toDateTimeString(),
  'updated_at' => Carbon\Carbon::now()->toDateTimeString(),

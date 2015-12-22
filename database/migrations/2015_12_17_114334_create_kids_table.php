@@ -26,6 +26,7 @@ class CreateKidsTable extends Migration
         $table->string('firstname');
         $table->string('lastname');
         $table->string('picture');
+        $table->date('birthday');
 
 
     });

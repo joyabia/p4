@@ -23,13 +23,15 @@ class Kid extends Model
 }
 
 /*
-*Kids can be signed in and out multiple times in a day
-*/
+ *Kids can be signed in and out multiple times in a day
+ */
     public function attendancestatus()
 {
     # With timetsamps() will ensure the pivot table has its created_at/updated_at fields automatically maintained
     return $this->hasMany('\p4\Attendance');
 }
+
+
 
 public function getFullnameAttribute()
  {

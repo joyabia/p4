@@ -14,11 +14,12 @@ class CreateAttendancesTable extends Migration
     {
         Schema::create('attendances', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('attendanceStatus');
+            $table->boolean('attendancestatus');
             $table->timestamps();
             $table->integer('kid_id')->unsigned();
             $table->foreign('kid_id') ->references('id')->on('kids')->onDelete('cascade');
         });
+
     }
 
     /**
@@ -28,6 +29,6 @@ class CreateAttendancesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('attendances');
+        //
     }
 }
