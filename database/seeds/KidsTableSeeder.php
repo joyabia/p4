@@ -13,7 +13,7 @@ class KidsTableSeeder extends Seeder
     public function run()
     {
 
-    	Kid::truncate();
+   
     $kid = \p4\Kid::firstOrCreate(['id' => 20]);
     $kid->firstname = 'Juluis';
     $kid->lastname = 'Go';
