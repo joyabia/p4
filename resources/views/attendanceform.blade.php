@@ -94,10 +94,10 @@
         
         @endforeach
 
+		
+		@foreach($kidcurrentstatus1 as $kid)	
 		<form method="POST" action="/submitattendance">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-		@foreach($kidcurrentstatus1 as $kid)	
-	
 
 	    <div class="panel picture" >
 			
@@ -122,8 +122,7 @@
 	</div>
 	
 	</div>
-	<div id="button"> <button type="submit" class="myButton">SUBMIT</button></div>
-		</form>
+	
 </div>
 <!--- panel wrap div end -->
 <div class="clearing"></div>

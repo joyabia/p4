@@ -8,6 +8,7 @@ use Auth;
 use p4\Http\Requests;
 use p4\Http\Controllers\Controller;
 use Request;
+use p4\Http\Requests\AttendanceFormRequest;
 
 class AttendanceController extends Controller
 {
@@ -74,7 +75,7 @@ class AttendanceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AttendanceFormRequest $request)
     {
         $input = Request::all();
         //$attendance = new Attendance;
@@ -83,7 +84,11 @@ class AttendanceController extends Controller
         $kid_id = array_keys($input)[1];
         $attendancestatus = array_values($input)[1];
 
-        return  array_keys($input)[1];        
+        \p4\Attendance::create([
+            'kid_id' => $kid_id,
+            'attendancestatus' => $attendancestatus,]);
+        
+        return redirect('/signattendance');
 
         
        

@@ -2,6 +2,8 @@
 
 namespace p4\Http\Requests;
 
+use Illuminate\Foundation\Http\FormRequest;
+use Auth;
 use p4\Http\Requests\Request;
 
 class AttendanceFormRequest extends Request
