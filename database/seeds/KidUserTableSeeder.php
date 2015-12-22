@@ -18,11 +18,9 @@ class KidUserTableSeeder extends Seeder
     # First, create an array of all the users we want to associate kids with
     # The *key* will be the user email, and the *value* will be an array of tags.
     $users =[
-        'jill@harvard.edu' => ['Delfina','Zoey'],
-        'jamal@harvard.edu' => ['Delfina','Zoey'],
-        'Cleta08@yahoo.com' =>['Kale', 'Derrick', 'Zaria'],
-        'aDavis@yahoo.com' => ['Omari'],
-        'nPrice@yahoo.com' => ['Salvador', 'Otha']
+        'jill@harvard.edu' => ['Julius','Pah'],
+        'jamal@harvard.edu' => ['Brett','Mary', 'Jus'],
+        
     ];
 
      # Now loop through the above array, creating a new pivot for each user to kid
