@@ -25,10 +25,11 @@ class AttendanceTableSeeder extends Seeder
 			 'created_at' => ($time),
 			 'updated_at' => ($time),
 			 'attendancestatus'=> $faker->biasedNumberBetween($min = 0, $max = 1),
-             'kid_id'=>$faker->biasedNumberBetween($min = 1, $max = 15),
+             'kid_id'=>$faker->biasedNumberBetween($min = 1, $max = 25),
 
 
 ]);
     }
+    
 }
 }
