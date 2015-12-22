@@ -14,6 +14,7 @@ class AttendanceTableSeeder extends Seeder
     public function run()
     {
           	$faker = \Faker\Factory::create();
+            Attendance::truncate();
 
 
 			 foreach(range(1,40) as $index)

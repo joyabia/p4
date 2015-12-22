@@ -4,6 +4,8 @@ use Illuminate\Database\Seeder;
 
 class KidUserTableSeeder extends Seeder
 {
+
+
     /**
      * Run the database seeds.
      *
@@ -38,7 +40,7 @@ class KidUserTableSeeder extends Seeder
             $kid = \p4\Kid::where('firstname','LIKE',$firstname)->first();
 
             # Connect this user to this kid
-            $user->kids()->save($kid);
+            $user->kids()->attach($kid);
 
 
         }
