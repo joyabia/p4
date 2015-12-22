@@ -41,15 +41,21 @@ class AttendanceController extends Controller
         //test kids attendance status
         if ($attendance["attendancestatus"] == 1){
             $stringattendance = "Signed-In";
+            $newattendstatus =0;
+            $newstringattendance = "Sign-Out";
         }
         elseif($attendance["attendancestatus"] == 0)
         {
             $stringattendance = "Signed-Out";
+            $newattendstatus=1;
+            $newstringattendance = "Sign-In";
         }
 
         //build array for a kids attendance parameters
         $kidcurrentstatus2  = array('id' => $maxid, 'attendstat' => $attendance["attendancestatus"], 
-        'stringattendance'=> $stringattendance, 'kid_id' => $attendance['kid_id'], 'picture' => $kids->picture, 'fullname'=>$kids->fullname);
+        'stringattendance'=> $stringattendance, 'newstringattendance'=> $newstringattendance,'kid_id' => $attendance['kid_id'], 
+        'newattendstatus'=> $newattendstatus, 'picture' => $kids->picture, 
+        'firstname'=>$kids->firstname ,'fullname'=>$kids->fullname);
        
         $kidcurrentstatus1 [] = $kidcurrentstatus2;
     }
@@ -71,8 +77,15 @@ class AttendanceController extends Controller
     public function store(Request $request)
     {
         $input = Request::all();
+        //$attendance = new Attendance;
+        //$attendance->attendancestatus =$input['kid_id']
 
-        return $input;
+        $kid_id = array_keys($input)[1];
+        $attendancestatus = array_values($input)[1];
+
+        return  array_keys($input)[1];        
+
+        
        
     }
 

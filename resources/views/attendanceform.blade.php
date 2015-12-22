@@ -7,15 +7,7 @@
 <link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 <style>
-	.sign-in{
-		background-color: green;
-		
-	}
-
-	.sign-out{
-		background-color: red;
-		
-	}
+	
 
 	img{
 		border-radius: 50%;
@@ -32,44 +24,35 @@
 	 overflow:hidden;width: 2000px;
 	}
  #greeting{
- 	background-color: #cf9359;
+ 	
  	    line-height: 1;
  	    font-size: 26px;
  	    text-align: center;
  	    margin-bottom: 20px;
  }
 
- .myButton {
-	-moz-box-shadow:inset -10px 37px 0px -24px #e67a73;
-	-webkit-box-shadow:inset -10px 37px 0px -24px #e67a73;
-	box-shadow:inset -10px 37px 0px -24px #e67a73;
-	background-color:#e4685d;
-	-moz-border-radius:4px;
-	-webkit-border-radius:4px;
-	border-radius:4px;
-	border:1px solid #ffffff;
+.myButton {
+;
+	background-color:#cf9359;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-family:Georgia;
-	font-size:19px;
+	font-family:Arial;
+	font-size:13px;
 	font-weight:bold;
-	padding:12px 76px;
+	padding:6px 12px;
 	text-decoration:none;
-	text-shadow:1px 2px 2px #b23e35;
+	margin-top: 10px;
 }
 .myButton:hover {
-	background-color:#eb675e;
+	
+	background-color:#cf9359;
 }
 .myButton:active {
 	position:relative;
 	top:1px;
 }
 
-#button{
-	margin-left: 40px;
-	margin-right: auto;
-}
 
 
 	</style>
@@ -88,9 +71,9 @@
   <div class="header-right-panel">
     <div class="menu">
       <ul>
-        <li class="marRight20"><a class="active" href="/">home</a></li>
+        <li class="marRight20"><a href="/">home</a></li>
         <li class="marRight20"><a href="/register">register</a></li>
-        <li class="marRight20"><a href="/login">login</a></li>
+        <li class="marRight20"><a class="active" href="/login">login</a></li>
         <li class="marRight20"><a href="/logout">logout</a></li>
       </ul>
     </div>
@@ -119,18 +102,21 @@
 	    <div class="panel picture" >
 			
 			<img src={{$kid['picture']}}>
-			{{$kid['kid_id']}}
-			<h4> {!!$kid['fullname']!!} current attendance status is {!!$kid['stringattendance']!!}</h4>
+			
+			<h4> {!!$kid['fullname']!!} is currently {!!$kid['stringattendance']!!}</h4>
 					
-			<input type="checkbox" name={!!$kid['kid_id']!!} id={!!$kid['kid_id']!!} value=>
-			<label for={!!$kid['kid_id']!!}>{!!$kid['stringattendance']!!} {!!$kid['fullname']!!}</label>
+			<!--<input type="checkbox" name={!!$kid['kid_id']!!} id={!!$kid['kid_id']!!} value=>
+			<label for={!!$kid['kid_id']!!}>{!!$kid['stringattendance']!!} {!!$kid['fullname']!!}</label>-->
 			
 
-			
+			<div id="button"> <button name= {!!$kid['kid_id']!!}  type="submit" value={!!$kid['newattendstatus']!!} 
+			class="myButton">{{$kid['newstringattendance']}} {{$kid['firstname']}}</button></div>
+
 
 		
 		</div>
-		
+			
+		</form>
 		@endforeach
 
 	</div>
