@@ -56,27 +56,6 @@ class KidsTableSeeder extends Seeder
  	$kid->picture=('images/kid4.jpg');
  	$kid->save();
 
- 	    $kid = \p4\Kid::firstOrCreate(['id' => 20]);
-    $kid->firstname = 'Juluis';
-    $kid->lastname = 'Go';
-    $kid->birthday = 2010-05-07;
- 	$kid->picture=('images/kid4.jpg');
- 	$kid->save();
-
- 	    $kid = \p4\Kid::firstOrCreate(['id' => 20]);
-    $kid->firstname = 'Juluis';
-    $kid->lastname = 'Go';
-    $kid->birthday = 2010-05-07;
- 	$kid->picture=('images/kid4.jpg');
- 	$kid->save();
-
- 	$kid = \p4\Kid::firstOrCreate(['id' => 20]);
-    $kid->firstname = 'Juluis';
-    $kid->lastname = 'Go';
-    $kid->birthday = 2010-05-07;
- 	$kid->picture=('images/kid4.jpg');
- 	$kid->save();
-
 
    
    $faker = \Faker\Factory::create();

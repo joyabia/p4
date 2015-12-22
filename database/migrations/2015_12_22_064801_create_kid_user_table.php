@@ -39,7 +39,7 @@ class CreateKidUserTable extends Migration
      */
     public function down()
     {
-       Schema::drop('user_kid');
+       Schema::drop('kid_user');
        
     }
 }
