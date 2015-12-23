@@ -58,20 +58,8 @@
               <button type="submit" class="button">Register</button>
             </div>
           </form>
+          <div class="clearing"></div>
 
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--Register Children-->
-
-<div class="page-wrap">
-  <div class="page-wrapper">
-    <div class="primary-content marRight30">
-      <div class="mid-panel">
-        <div class="mid-panel-content">
           <div class="title">
             <h1>Please Register A Child </h1>
           </div>
@@ -80,7 +68,7 @@
             <form method='post' action='/registerchild'>
             {!! csrf_field() !!}
             <div class="contact-form margin-top">
-              <label> <span>First Name</span>
+              <label> <span>Child First Name</span>
               <input type="text" class="input_text" name="firstnamereg" id="firstnamereg"/>
               </label>
               <label> <span>Child Last Name</span>
@@ -91,50 +79,33 @@
 
           </form>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--end reg form-->
-
-<!--DeRegister Children-->
-
-<div class="page-wrap">
-  <div class="page-wrapper">
-    <div class="primary-content marRight30">
-      <div class="mid-panel">
-        <div class="mid-panel-content">
-          <div class="title">
-            <h1>Please Cancel Registration For A Child </h1>
+      
+      <div class="clearing"> </div>
+      <div class="title">
+            <h1>Cancel Registration For A Child </h1>
           </div>
           <div class="border"></div>
           
             <form method='post' action='/registerchild'>
             {!! csrf_field() !!}
             <div class="contact-form margin-top">
-              <label> <span>First Name</span>
+              <label> <span>Child First Name</span>
               <input type="text" class="input_text" name="firstnamedereg" id="firstnamedereg"/>
               </label>
               <label> <span>Child Last Name</span>
               <input type="text" class="input_text" name="emaildereg" id="emaildereg"/>
               </label>
-              <button type="submit" class="button">Register Child</button>
+              <button type="submit" class="button">Cancel Registration</button>
             </div>
 
           </form>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
 <!--end reg form-->
-<!--- panel wrap div end -->
-<div class="clearing"></div>
 
-
-
+        </div>
+      </div>
+    
 
 <!--- page wrap div end -->
 <div class="footer">
