@@ -46,12 +46,9 @@ class RegistrationController extends Controller
         $lastname = $request->input('lastname');
         $birthday = $request->input('birthday');
 
-        \p4\Kid::create(Request::all()/*[
-            /*'firstname' => $firstname,
-            'lastname' => $lastname,
-            'birthday' => $birthday,]*/);
+        \p4\Kid::create(Request::all());
         
-        return $birthday;//redirect('/register');
+        return redirect('/register');
     }
 
     /**
