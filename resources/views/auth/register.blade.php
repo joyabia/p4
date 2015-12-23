@@ -101,10 +101,8 @@
           </form>
         </div>
       </div>
-<!--end reg form-->
-
-        </div>
-      </div>
+    </div>
+  </div>
     
 
 <!--- page wrap div end -->
