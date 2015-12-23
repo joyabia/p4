@@ -41,7 +41,7 @@ class RouteServiceProvider extends ServiceProvider
         $router->group(['namespace' => $this->namespace], function ($router) {
             require app_path('Http/routes.php');
 
-            $router->model('childregister', 'p4\Kid');
+            
         });
     }
 }

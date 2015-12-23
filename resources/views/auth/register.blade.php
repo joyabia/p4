@@ -56,6 +56,10 @@
               <input type="password" class="input_text" name="password_confirmation" id="password_confirmation"/>
               </label>
               <button type="submit" class="button">Register</button>
+              @foreach($errors->all() as $error)
+                  <li class="errorchildreg">{{ $error }}</li>
+                @endforeach
+              </ul>
             </div>
           </form>
           <div class="clearing"></div>
@@ -88,32 +92,13 @@
         </div>
       
       <div class="clearing"> </div>
-      <div class="title">
-            <h1>Cancel Registration For A Child </h1>
-          </div>
-          <div class="border"></div>
-          
-            <form method='post' action='/childregister/{{'$input->firstname'}}''>
-            
-            {!! csrf_field() !!}
-            {{ method_field('DELETE') }}
-            <div class="contact-form margin-top">
-              <label> <span>Child First Name</span>
-              <input type="text" class="input_text" name="firstname" id="firstname"/>
-              </label>
-              <label> <span>Child Last Name</span>
-              <input type="text" class="input_text" name="lastname" id="lastname"/>
-              </label>
-              <button type="submit" class="button">Cancel Registration</button>
-            </div>
-
-          </form>
-        </div>
+     
       </div>
     </div>
   </div>
     
-    
+ </div>
+
 
 
 <!--- page wrap div end -->

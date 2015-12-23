@@ -4,9 +4,12 @@ namespace p4\Http\Controllers\Auth;
 
 use p4\User;
 use Validator;
+
 use p4\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Support\Facades\Auth;
+use Request;
 
 class AuthController extends Controller
 {
@@ -28,6 +31,24 @@ class AuthController extends Controller
  *
  * @return \Illuminate\Http\Response
  */
+    public function postRegister(Request $request)
+ {
+    $validator = $this->validator($request->all());
+    if ($validator->fails())
+    {
+        $this->throwValidationException(
+            $request, $validator
+        );
+    }
+    Auth::login($this->create($request->all()));     
+    // Now you can redirect!
+    return redirect('/childregister');
+
+   }
+
+
+
+
     public function getLogout()
     {
         \Auth::logout();
@@ -44,6 +65,8 @@ class AuthController extends Controller
     # Where should the user be redirected to after logging out?
     protected $redirectAfterLogout = '/';
 
+    #Where user is redirected after registration
+    protected $redirectTo = '/childregister';
 
 
 

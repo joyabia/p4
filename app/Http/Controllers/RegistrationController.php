@@ -83,9 +83,8 @@ class RegistrationController extends Controller
      */
     public function destroy(Request $request, \p4\Kid $kid)
     {
-   
-        $kid->delete();
+       
 
-        return $kid;
+        
     }
 }
