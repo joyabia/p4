@@ -4,66 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Attendance</title>
 <link href="/css/styles.css" rel="stylesheet" type="text/css" />
-<link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
-<style>
-	
+<link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'/>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'/>
 
-	img{
-		border-radius: 50%;
-	}
-
-	div.picture{
-		margin-right: 20px;
-		"float:left;
-		width:210px;
-		height:250px;
-	}
-
-	#inner{ 
-	 overflow:hidden;width: 2000px;
-	}
- #greeting{
- 	
- 	    line-height: 1;
- 	    font-size: 26px;
- 	    text-align: center;
- 	    margin-bottom: 20px;
- }
-
-.myButton {
-;
-	background-color:#cf9359;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:13px;
-	font-weight:bold;
-	padding:6px 12px;
-	text-decoration:none;
-	margin-top: 10px;
-}
-.myButton:hover {
-	
-	background-color:#cf9359;
-}
-.myButton:active {
-	position:relative;
-	top:1px;
-}
-
-
-
-	</style>
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
 <div class="header">
   <div class="header-left-panel">
     <div class="logo-wrap">
       <div class="logo">
-      <div class="img" id="wiz"><img src="images/wizard20.jpg"/></div>
+      <div class="img" id="wiz"><img src="images/wizard20.jpg" alt="logo"/></div>
         <h1>Sign-In Wiz</h1>
       </div>
     </div>
@@ -73,8 +24,9 @@
       <ul>
         <li class="marRight20"><a href="/">home</a></li>
         <li class="marRight20"><a href="/register">register</a></li>
-        <li class="marRight20"><href="/login">login</a></li>
+        <li class="marRight20"><a href="/login">login</a></li>
         <li class="marRight20"><a href="/logout">logout</a></li>
+        <li class="marRight20"><a class="active" href="/#">Attendance</a></li>
       </ul>
     </div>
   </div>
@@ -96,12 +48,12 @@
 
 		
 		@foreach($kidcurrentstatus1 as $kid)	
-		<form method="POST" action="/submitattendance">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+		<form method="post" action="/submitattendance">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
 
 	    <div class="panel picture" >
 			
-			<img src={{$kid['picture']}}>
+			<img src={{$kid['picture']}} alt="picture of your child" />
 			
 			<h4> {!!$kid['fullname']!!} is currently {!!$kid['stringattendance']!!}</h4>
 					
@@ -127,7 +79,7 @@
 <!--- panel wrap div end -->
 <div class="clearing"></div>
 </div>
-</div>
+
 
 
 

@@ -165,3 +165,14 @@ CONTACT FORM CLASSS
 
 .footer{width:960px; margin:0 auto; margin-top:76px; overflow:hidden;}
 .footer p{text-align:center; color:#cf9359; padding-bottom:72px;}
+
+img{border-radius: 50%;}
+
+div.picture{margin-right: 20px; float:left; width:210px; height:250px;}
+#inner{ overflow:hidden;width: 2000px;}
+#greeting{line-height: 1; font-size: 26px; text-align: center; margin-bottom: 20px;}
+
+.myButton {	background-color:#cf9359; display:inline-block;	cursor:pointer;	color:#ffffff;	font-family:Arial;	font-size:13px;
+	font-weight:bold;	padding:6px 12px; text-decoration:none;	margin-top: 10px;}
+.myButton:hover {background-color:#cf9359;}
+.myButton:active {position:relative;	top:1px;}
