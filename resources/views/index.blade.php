@@ -33,7 +33,7 @@
 <div class="panel-wrap">
   <div class="panel-wrapper">
     <div class="panel marRight30">
-      <div class="img"><img src="images/kid1.jpg" alt="picture of your child" /></div>
+      <div class="img"><img src="images/kid1.jpg" alt="picture of child" /></div>
       <div class="title">
         <h1>WE</h1>
       </div>
@@ -41,7 +41,7 @@
 
     </div>
     <div class="panel marRight30">
-      <div class="img"><img src="images/kid2.jpg" alt="picture of your child"/></div>
+      <div class="img"><img src="images/kid2.jpg" alt="picture of  child"/></div>
       <div class="title">
         <h1 class="border-bottom">LOVE</h1>
       </div>
@@ -49,7 +49,7 @@
       
     </div>
     <div class="panel">
-      <div class="img"><img src="images/kid3.jpg" alt="picture of your child"/></div>
+      <div class="img"><img src="images/kid3.jpg" alt="picture of child"/></div>
       <div class="title">
         <h1 class="border-bottom">KIDS</h1>
       </div>

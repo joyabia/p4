@@ -2,12 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
- </script>
 <title>Login</title>
 <link href="/css/styles.css" rel="stylesheet" type="text/css" />
-<link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'/>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'/>
 </head>
 <body>
 <div class="header">
@@ -42,8 +40,8 @@
           </div>
           <div class="border"></div>
           
-          <form method="POST" action="/login">
-             <input type="hidden" name="_token" value="{{ csrf_token() }}">
+          <form method="post" action="/login">
+             <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
             <div class="contact-form margin-top">
               <label> <span>Email</span>
               <input type="text" class="input_text" name="email" id="email"/>
@@ -52,7 +50,7 @@
               <input type="password" class="input_text" name="password" id="password"/>
               </label>
               <div>
-                <input type="checkbox" name="remember"> Remember Me
+                <input type="checkbox" name="remember"/> Remember Me
 
               </div>
                <button type="submit" class="button">Login</button>
@@ -74,7 +72,7 @@
 
 <!--- page wrap div end -->
 <div class="footer">
-  <p>Copyright (c) websitename. All rights reserved. <a href="http://www.alltemplates.com">www.alltemplateneeds.com </a></p>
+  <p>Copyright (c) websitename. All rights reserved. <a href="http://www.alltemplates.com"> www.alltemplateneeds.com </a></p>
 </div>
 </body>
 </html>
