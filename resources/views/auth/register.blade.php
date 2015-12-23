@@ -37,7 +37,7 @@
       <div class="mid-panel">
         <div class="mid-panel-content">
           <div class="title">
-            <h1>Please Register Your Account</h1>
+            <h1>Please Register An Account/Child/</h1>
           </div>
           <div class="border"></div>
             <form method='post' action='/register'>
@@ -65,15 +65,22 @@
           </div>
           <div class="border"></div>
           
-            <form method='post' action='/registerchild'>
+            <form method='post' action='/childregister'>
             {!! csrf_field() !!}
             <div class="contact-form margin-top">
               <label> <span>Child First Name</span>
-              <input type="text" class="input_text" name="firstnamereg" id="firstnamereg"/>
+              <input type="text" class="input_text" name="firstname" id="firstname"/>
               </label>
               <label> <span>Child Last Name</span>
-              <input type="text" class="input_text" name="emailchildreg" id="emailchildreg"/>
+              <input type="text" class="input_text" name="lastname" id="lastname"/>
               </label>
+              <label><span>Birthday(Year-Month-Day):</span></label>
+              <input class="input_text" type="date" name="birthday" />
+              <ul>
+               @foreach($errors->all() as $error)
+                  <li id="errorchildreg">{{ $error }}</li>
+                @endforeach
+              </ul>
               <button type="submit" class="button">Register Child</button>
             </div>
 
@@ -90,10 +97,10 @@
             {!! csrf_field() !!}
             <div class="contact-form margin-top">
               <label> <span>Child First Name</span>
-              <input type="text" class="input_text" name="firstnamedereg" id="firstnamedereg"/>
+              <input type="text" class="input_text" name="firstname" id="firstname"/>
               </label>
               <label> <span>Child Last Name</span>
-              <input type="text" class="input_text" name="emaildereg" id="emaildereg"/>
+              <input type="text" class="input_text" name="lastname" id="lastname"/>
               </label>
               <button type="submit" class="button">Cancel Registration</button>
             </div>
@@ -104,6 +111,8 @@
     </div>
   </div>
     
+    
+
 
 <!--- page wrap div end -->
 <div class="footer">

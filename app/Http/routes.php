@@ -33,6 +33,9 @@ Route::get('/signattendance', 'AttendanceController@create');
 //submit attendance form to update database
 Route::post('/submitattendance', 'AttendanceController@store');
 
+//submit Child registration forms
+Route::resource('/childregister', 'RegistrationController' );
+
 Route::get('/confirm-login-worked', function() {
 
     # You may access the authenticated user via the Auth facade

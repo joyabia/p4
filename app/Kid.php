@@ -8,8 +8,8 @@ class Kid extends Model
 {
     //
     protected $fillable = [
-    'firstName',
-    'lastName',
+    'firstname',
+    'lastname',
     ];
 
 /*

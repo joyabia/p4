@@ -2,10 +2,14 @@
 
 namespace p4\Http\Controllers;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
+use Auth;
 
 use p4\Http\Requests;
 use p4\Http\Controllers\Controller;
+use Request;
+use p4\Http\Requests\RegistrationFormRequest;
+
 
 class RegistrationController extends Controller
 {
@@ -35,9 +39,19 @@ class RegistrationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RegistrationFormRequest $request)
     {
-        //
+        $input = Request::all();
+        $firstname = $request->input('firstname');
+        $lastname = $request->input('lastname');
+        $birthday = $request->input('birthday');
+
+        \p4\Kid::create([
+            'firstname' => $firstname,
+            'lastname' => $lastname,
+            'birthday' => $birthday,]);
+        
+        return $birthday;//redirect('/register');
     }
 
     /**
