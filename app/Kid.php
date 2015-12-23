@@ -10,6 +10,7 @@ class Kid extends Model
     protected $fillable = [
     'firstname',
     'lastname',
+    'birthday'
     ];
 
 /*

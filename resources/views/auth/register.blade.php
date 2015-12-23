@@ -93,8 +93,10 @@
           </div>
           <div class="border"></div>
           
-            <form method='post' action='/registerchild'>
+            <form method='post' action='/childregister/{{'$input->firstname'}}''>
+            
             {!! csrf_field() !!}
+            {{ method_field('DELETE') }}
             <div class="contact-form margin-top">
               <label> <span>Child First Name</span>
               <input type="text" class="input_text" name="firstname" id="firstname"/>

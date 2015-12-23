@@ -46,10 +46,10 @@ class RegistrationController extends Controller
         $lastname = $request->input('lastname');
         $birthday = $request->input('birthday');
 
-        \p4\Kid::create([
-            'firstname' => $firstname,
+        \p4\Kid::create(Request::all()/*[
+            /*'firstname' => $firstname,
             'lastname' => $lastname,
-            'birthday' => $birthday,]);
+            'birthday' => $birthday,]*/);
         
         return $birthday;//redirect('/register');
     }
@@ -60,17 +60,7 @@ class RegistrationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function edit($id)
     {
         //
@@ -94,8 +84,11 @@ class RegistrationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, \p4\Kid $kid)
     {
-        //
+   
+        $kid->delete();
+
+        return $kid;
     }
 }
