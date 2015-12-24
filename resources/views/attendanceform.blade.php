@@ -24,6 +24,7 @@
       <ul>
         <li class="marRight20"><a href="/">home</a></li>
         <li class="marRight20"><a href="/register">register</a></li>
+        <li class="marRight20"><a href="/childregister/create">register a child</a></li>
         <li class="marRight20"><a href="/login">login</a></li>
         <li class="marRight20"><a href="/logout">logout</a></li>
         <li class="marRight20"><a class="active" href="/#">Attendance</a></li>
@@ -57,9 +58,7 @@
 			
 			<h4> {!!$kid['fullname']!!} is currently {!!$kid['stringattendance']!!}</h4>
 					
-			<!--<input type="checkbox" name={!!$kid['kid_id']!!} id={!!$kid['kid_id']!!} value=>
-			<label for={!!$kid['kid_id']!!}>{!!$kid['stringattendance']!!} {!!$kid['fullname']!!}</label>-->
-			
+						
 
 			<div id="button"> <button name= {!!$kid['kid_id']!!}  type="submit" value={!!$kid['newattendstatus']!!} 
 			class="myButton">{{$kid['newstringattendance']}} {{$kid['firstname']}}</button></div>

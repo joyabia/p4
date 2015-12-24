@@ -6,10 +6,11 @@ use p4\User;
 use Validator;
 
 use p4\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
-use Illuminate\Support\Facades\Auth;
-use Request;
+//use Illuminate\Support\Facades\Auth;
+
 
 class AuthController extends Controller
 {
@@ -40,9 +41,9 @@ class AuthController extends Controller
             $request, $validator
         );
     }
-    Auth::login($this->create($request->all()));     
-    // Now you can redirect!
-    return redirect('/childregister');
+    //\Auth::login($this->create($request->all()));  
+    
+    return redirect('/childregister/create');
 
    }
 
@@ -66,7 +67,7 @@ class AuthController extends Controller
     protected $redirectAfterLogout = '/';
 
     #Where user is redirected after registration
-    protected $redirectTo = '/childregister';
+    protected $redirectTo = '/';
 
 
 

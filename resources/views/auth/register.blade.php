@@ -22,8 +22,10 @@
       <ul>
         <li class="marRight20"><a href="/">home</a></li>
         <li class="marRight20"><a class="active" href="/register">register</a></li>
+        <li class="marRight20"><a href="/chidregister/create">RegisterChild</a></li>
         <li class="marRight20"><a href="/login">login</a></li>
         <li class="marRight20"><a href="/logout">logout</a></li>
+        <li class="marRight20"><a href="#">Attendance</a></li>
       </ul>
     </div>
   </div>
@@ -37,7 +39,7 @@
       <div class="mid-panel">
         <div class="mid-panel-content">
           <div class="title">
-            <h1>Please Register An Account/Child/</h1>
+            <h1>Please Register An Account</h1>
           </div>
           <div class="border"></div>
             <form method='post' action='/register'>
@@ -55,42 +57,15 @@
               <label> <span>Confirm Password</span>
               <input type="password" class="input_text" name="password_confirmation" id="password_confirmation"/>
               </label>
-              <button type="submit" class="button">Register</button>
+              
               @foreach($errors->all() as $error)
                   <li class="errorchildreg">{{ $error }}</li>
-                @endforeach
+              @endforeach
+              <button type="submit" class="button">Register</button>
               </ul>
             </div>
           </form>
-          <div class="clearing"></div>
 
-          <div class="title">
-            <h1>Please Register A Child </h1>
-          </div>
-          <div class="border"></div>
-          
-            <form method='post' action='/childregister'>
-            {!! csrf_field() !!}
-            <div class="contact-form margin-top">
-              <label> <span>Child First Name</span>
-              <input type="text" class="input_text" name="firstname" id="firstname"/>
-              </label>
-              <label> <span>Child Last Name</span>
-              <input type="text" class="input_text" name="lastname" id="lastname"/>
-              </label>
-              <label><span>Birthday(Year-Month-Day):</span></label>
-              <input class="input_text" type="date" name="birthday" />
-              <ul>
-               @foreach($errors->all() as $error)
-                  <li id="errorchildreg">{{ $error }}</li>
-                @endforeach
-              </ul>
-              <button type="submit" class="button">Register Child</button>
-            </div>
-
-          </form>
-        </div>
-      
       <div class="clearing"> </div>
      
       </div>

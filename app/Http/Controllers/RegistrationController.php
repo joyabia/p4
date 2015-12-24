@@ -30,7 +30,11 @@ class RegistrationController extends Controller
      */
     public function create()
     {
-        //
+
+        //get the chidren attached to the user account
+        $user = Auth::user();
+        $currentRegKids = $user->kids;
+        return view('/kidregister')->with('currentRegKids', $currentRegKids);
     }
 
     /**
@@ -45,10 +49,25 @@ class RegistrationController extends Controller
         $firstname = $request->input('firstname');
         $lastname = $request->input('lastname');
         $birthday = $request->input('birthday');
-
-        \p4\Kid::create(Request::all());
         
-        return redirect('/register');
+
+        $kid =\p4\Kid::create(Request::all());
+        $kidid = $kid->id;
+        
+        //get the authenticated user
+        $user = Auth::user();
+
+        //associate the kid to the user
+        $user->kids()->attach($kid);
+
+        //Give the kid an attendance of sign out
+        $attendance =  \p4\Attendance::create(['kid_id'=>$kidid, 'attendancestatus' => 0]);
+
+        
+
+        //\p4\Attendance::create(['attendancestatus' => 0]);
+        
+        return redirect('/childregister/create');
     }
 
     /**
