@@ -63,7 +63,7 @@
             </div>
 
           </form>
-          <h2> <a href="/cancelkidreg/create"> Would you like to Cancel Your Childs Registration</a></h2>
+          <h2> <a href="/cancelkidreg"> Would you like to Cancel Your Childs Registration</a></h2>
           </div>
           </div>
 

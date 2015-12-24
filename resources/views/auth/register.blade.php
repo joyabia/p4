@@ -22,7 +22,7 @@
       <ul>
         <li class="marRight20"><a href="/">home</a></li>
         <li class="marRight20"><a class="active" href="/register">register</a></li>
-        <li class="marRight20"><a href="/chidregister/create">RegisterChild</a></li>
+        <li class="marRight20"><a href="/chidregister">RegisterChild</a></li>
         <li class="marRight20"><a href="/login">login</a></li>
         <li class="marRight20"><a href="/logout">logout</a></li>
         <li class="marRight20"><a href="#">Attendance</a></li>

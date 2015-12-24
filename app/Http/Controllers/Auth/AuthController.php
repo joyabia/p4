@@ -43,12 +43,9 @@ class AuthController extends Controller
     }
     //\Auth::login($this->create($request->all()));  
     
-    return redirect('/childregister/create');
+    return redirect('/childregister');
 
    }
-
-
-
 
     public function getLogout()
     {

@@ -34,10 +34,10 @@ Route::get('/signattendance', 'AttendanceController@create');
 Route::post('/submitattendance', 'AttendanceController@store');
 
 //submit Child registration forms
-Route::resource('/childregister', 'RegistrationController' );
+Route::get('/childregister', 'RegistrationController@create' );
 
 //submit Child registration forms
-Route::resource('/cancelkidreg', 'RegistrationController@cancelkidreg' );
+Route::get('/cancelkidreg', 'RegistrationController@cancelkidreg' );
 
 Route::get('/confirm-login-worked', function() {
 
