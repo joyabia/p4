@@ -38,14 +38,23 @@
     <div class="primary-content marRight30">
       <div class="mid-panel">
         <div class="mid-panel-content">
-                    <div class="title">
-            <h1>Please Register A Child </h1>
+                    
+
+          <div class="title">
+            <h1>Cancel Registration </h1>
           </div>
           <div class="border"></div>
           
-            <form method='post' action='/childregister'>
+            <form method='post' action='/childregister/delete'>
             {!! csrf_field() !!}
             <div class="contact-form margin-top">
+              @foreach($currentRegKids as $regkid)
+                <label> <span>{{$regkid->firstname}} {{$regkid->lastname}}</span>
+              
+              </label>
+                <button type="submit" class="button">Cancel Registration</button>
+              @endforeach
+
               <label> <span>Child First Name</span>
               <input type="text" class="input_text" name="firstname" id="firstname"/>
               </label>
@@ -59,15 +68,11 @@
                   <li id="errorchildreg">{{ $error }}</li>
                 @endforeach
               </ul>
-              <button type="submit" class="button">Register Child</button>
+              <button type="submit" class="button">Cancel Registration</button>
             </div>
 
           </form>
-          <h2> <a href="/cancelkidreg/create"> Would you like to Cancel Your Childs Registration</a></h2>
-          </div>
-          </div>
-
-          
+        </div>
       
       <div class="clearing"> </div>
      

@@ -36,6 +36,9 @@ Route::post('/submitattendance', 'AttendanceController@store');
 //submit Child registration forms
 Route::resource('/childregister', 'RegistrationController' );
 
+//submit Child registration forms
+Route::resource('/cancelkidreg', 'RegistrationController@cancelkidreg' );
+
 Route::get('/confirm-login-worked', function() {
 
     # You may access the authenticated user via the Auth facade

@@ -30,12 +30,22 @@ class RegistrationController extends Controller
      */
     public function create()
     {
+        
+           
+            return view('/kidregister');
+    
+}
 
+public function cancelkidreg()
+    {
+        
         //get the chidren attached to the user account
         $user = Auth::user();
+        
         $currentRegKids = $user->kids;
-        return view('/kidregister')->with('currentRegKids', $currentRegKids);
+        return view('/cancelregform')->with('currentRegKids', $currentRegKids);
     }
+        
 
     /**
      * Store a newly created resource in storage.
@@ -49,7 +59,7 @@ class RegistrationController extends Controller
         $firstname = $request->input('firstname');
         $lastname = $request->input('lastname');
         $birthday = $request->input('birthday');
-        
+
 
         $kid =\p4\Kid::create(Request::all());
         $kidid = $kid->id;
