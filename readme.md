@@ -33,7 +33,7 @@ Click on the Register Child menu button
 
 
 ####Cancel Child’s Registration
-Click on the Register Child menu button
+Click on the Register C=hild menu button
 	A form is presented
 	Click on the link at bottom of form “Do you want to cancel your childs registration?n
 	The child’s details are deleted from  the database

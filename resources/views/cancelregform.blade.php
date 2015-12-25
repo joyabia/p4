@@ -46,9 +46,7 @@
                           {!! csrf_field() !!}
                           <input name="_method" type="hidden" value="DELETE">
                          
-                          <button type="submit" class="button">Cancel {{$regkid->firstname}} {{$regkid->lastname}}Registration</button>
-                          <a href='javascript:void(0)' onClick='parentNode.submit();return false;'>Cancel </a> </label>-->
-                        
+                          <button type="submit" class="button">Cancel Registration for {{$regkid->firstname}} {{$regkid->lastname}}</button>                      
                       </form>
                     @endforeach          
                 </div>
