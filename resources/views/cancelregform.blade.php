@@ -38,49 +38,28 @@
     <div class="primary-content marRight30">
       <div class="mid-panel">
         <div class="mid-panel-content">
-                    
-
-          <div class="title">
-            <h1>Cancel Registration </h1>
-          </div>
-          <div class="border"></div>
-          
-            <form method='post' action='/childregister/delete'>
-            {!! csrf_field() !!}
-            <div class="contact-form margin-top">
-              @foreach($currentRegKids as $regkid)
-                <label> <span>{{$regkid->firstname}} {{$regkid->lastname}}</span>
-              
-              </label>
-                <button type="submit" class="button">Cancel Registration</button>
-              @endforeach
-
-              <label> <span>Child First Name</span>
-              <input type="text" class="input_text" name="firstname" id="firstname"/>
-              </label>
-              <label> <span>Child Last Name</span>
-              <input type="text" class="input_text" name="lastname" id="lastname"/>
-              </label>
-              <label><span>Birthday(Year-Month-Day):</span></label>
-              <input class="input_text" type="date" name="birthday" />
-              <ul>
-               @foreach($errors->all() as $error)
-                  <li id="errorchildreg">{{ $error }}</li>
-                @endforeach
-              </ul>
-              <button type="submit" class="button">Cancel Registration</button>
+            <div class="title"><h1>Cancel Registration </h1> </div>
+              <div class="border"></div>
+                <div class="contact-form margin-top">
+                    @foreach($currentRegKids as $regkid)
+                       <form method='post' action='/childregister/delete/{{$regkid->id}}'>
+                          {!! csrf_field() !!}
+                          <input name="_method" type="hidden" value="DELETE">
+                         
+                          <button type="submit" class="button">Cancel {{$regkid->firstname}} {{$regkid->lastname}}Registration</button>
+                          <a href='javascript:void(0)' onClick='parentNode.submit();return false;'>Cancel </a> </label>-->
+                        
+                      </form>
+                    @endforeach          
+                </div>
+              <div class="clearing"> </div>
             </div>
-
-          </form>
+          </div>
         </div>
-      
-      <div class="clearing"> </div>
-     
       </div>
-    </div>
+    </form>
   </div>
-    
- </div>
+
 
 
 

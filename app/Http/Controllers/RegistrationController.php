@@ -110,10 +110,11 @@ public function cancelkidreg()
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, \p4\Kid $kid)
+    public function destroy($id)
     {
-       
-
+       $kid = \p4\Kid::findOrFail($id);       
+       $kid->delete();
+       return  $kid;
         
     }
 }

@@ -39,6 +39,8 @@ Route::get('/childregister', 'RegistrationController@create' );
 //submit Child registration forms
 Route::get('/cancelkidreg', 'RegistrationController@cancelkidreg' );
 
+Route::resource('/childregister/delete', 'RegistrationController@destroy' );
+
 Route::get('/confirm-login-worked', function() {
 
     # You may access the authenticated user via the Auth facade
