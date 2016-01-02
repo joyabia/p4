@@ -50,7 +50,7 @@
           </div>
           <div class="border"></div>
           
-            <form method='post' action='/childregister'>
+            <form method='post' action='/childregister' enctype="multipart/form-data">
             {!! csrf_field() !!}
             <div class="contact-form margin-top">
               <label> <span>Child First Name</span>
@@ -61,6 +61,11 @@
               </label>
               <label><span>Birthday(Year-Month-Day):</span></label>
               <input class="input_text" type="date" name="birthday" />
+              <label> <span>Load a Picture: </span><br/>
+              <input type="file" name="picture" id="picture">
+              </label>
+
+
               <ul>
                @foreach($errors->all() as $error)
                   <li id="errorchildreg">{{ $error }}</li>

@@ -56,13 +56,27 @@ public function cancelkidreg()
     public function store(RegistrationFormRequest $request)
     {
         $input = Request::all();
-        $firstname = $request->input('firstname');
-        $lastname = $request->input('lastname');
-        $birthday = $request->input('birthday');
+       
+        $file = Request::file('picture');
 
-
+        //move the file to the public folder
+       
         $kid =\p4\Kid::create(Request::all());
-        $kidid = $kid->id;
+
+        /*
+        *save the user uploaded picture in the images directory
+        * store the path in the database
+        */
+        if (Request::hasFile('picture'))
+        {
+            $filename = time().'-'.$file->getClientOriginalName();
+         $file = $file->move(public_path().'/images/', $filename);
+         $kid->picture = 'images/'.$filename;
+         $kid->save();
+        }
+
+         
+       $kidid = $kid->id;
         
         //get the authenticated user
         $user = Auth::user();
@@ -76,7 +90,8 @@ public function cancelkidreg()
         //flash a success message when a kid is added to the database
         \Session::flash('flash_message', $kid->fullname.' Has been registered in Sign-In Whiz');
         
-        return redirect('/childregister/create');
+        
+        return $kid->picture; // redirect('/childregister/create');
     }
 
     /**
