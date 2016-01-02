@@ -69,7 +69,7 @@ public function cancelkidreg()
         */
         if (Request::hasFile('picture'))
         {
-            $filename = time().'-'.$file->getClientOriginalName();
+         $filename = time().'-'.$file->getClientOriginalName();
          $file = $file->move(public_path().'/images/', $filename);
          $kid->picture = 'images/'.$filename;
          $kid->save();
@@ -91,7 +91,7 @@ public function cancelkidreg()
         \Session::flash('flash_message', $kid->fullname.' Has been registered in Sign-In Whiz');
         
         
-        return $kid->picture; // redirect('/childregister/create');
+        return redirect('/childregister/create');
     }
 
     /**
