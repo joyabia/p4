@@ -15,7 +15,7 @@ Used this template /http://www.free-css.com/free-css-templates/page190/html-14#s
 
 
 ### Demo Video
-http://screencast.com/t/bOQUvEn57
+http://screencast.com/t/uW6nydmal7S
 
 ###The workflows
 ####Sign Attendance
@@ -33,7 +33,7 @@ Click on the Register Child menu button
 
 
 ####Cancel Child’s Registration
-Click on the Register C=hild menu button
+Click on the Register Child menu button
 	A form is presented
 	Click on the link at bottom of form “Do you want to cancel your childs registration?n
 	The child’s details are deleted from  the database
