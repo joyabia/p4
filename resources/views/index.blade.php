@@ -31,9 +31,15 @@
   </div>
 </div>
 <!--- header div end -->
-
+<div class="flashmessage">
+   @if(Session::has('flash_message'))
+      {{Session::get('flash_message')}}
+  @endif
+</div>
 <div class="panel-wrap">
+       
   <div class="panel-wrapper">
+ 
     <div class="panel marRight30">
       <div class="img"><img src="/images/kid1.jpg" alt="picture of child" /></div>
       <div class="title">

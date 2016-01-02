@@ -41,7 +41,9 @@ class AuthController extends Controller
             $request, $validator
         );
     }
-    //\Auth::login($this->create($request->all()));  
+    \Auth::login($this->create($request->all()));  
+    $user = \Auth::user();
+    \Session::flash('flash_message', $user->name.' You have been registered, you may register your child');
     
     return redirect('/childregister/create');
 

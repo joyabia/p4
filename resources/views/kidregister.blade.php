@@ -33,6 +33,7 @@
 <!--- header div end -->
 
 
+
 <div class="page-wrap">
   <div class="page-wrapper">
     <div class="primary-content marRight30">
@@ -40,6 +41,12 @@
         <div class="mid-panel-content">
                     <div class="title">
             <h1>Please Register A Child </h1>
+            <div  class="flashmessage">
+            @if(Session::has('flash_message'))
+              {{Session::get('flash_message')}}
+
+            @endif
+            </div>
           </div>
           <div class="border"></div>
           

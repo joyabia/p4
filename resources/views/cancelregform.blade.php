@@ -39,6 +39,9 @@
       <div class="mid-panel">
         <div class="mid-panel-content">
             <div class="title"><h1>Cancel Registration </h1> </div>
+            @if(Session::has('flash_message'))
+              {{Session::get('flash_message')}}
+            @endif
               <div class="border"></div>
                 <div class="contact-form margin-top">
                     @foreach($currentRegKids as $regkid)

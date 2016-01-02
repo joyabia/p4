@@ -73,9 +73,8 @@ public function cancelkidreg()
         //Give the kid an attendance of sign out
         $attendance =  \p4\Attendance::create(['kid_id'=>$kidid, 'attendancestatus' => 0]);
 
-        
-
-        //\p4\Attendance::create(['attendancestatus' => 0]);
+        //flash a success message when a kid is added to the database
+        \Session::flash('flash_message', $kid->fullname.' Has been registered in Sign-In Whiz');
         
         return redirect('/childregister/create');
     }
@@ -112,8 +111,15 @@ public function cancelkidreg()
      */
     public function destroy($id)
     {
-       $kid = \p4\Kid::findOrFail($id);       
+
+
+       $kid = \p4\Kid::findOrFail($id); 
        $kid->delete();
+       /**
+       * Flash a session message to the screen
+       */
+       \Session::flash('flash_message', 'You have cancelled registration for '.$kid->fullname);      
+       
        return  redirect('/cancelkidreg');
         
     }
