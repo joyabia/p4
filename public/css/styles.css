@@ -59,7 +59,7 @@ HEADER CLASSES
 .menu ul li a:hover{background:#cf9359; color:#282828;}
 .menu ul li a.active{background:#cf9359; color:#282828;}
 #wiz{border-radius: 20px}
-
+li.drop {display: inline; float:none;}
 /*-------------------------------------------------
 PANEL CLASSES
 -------------------------------------------------*/

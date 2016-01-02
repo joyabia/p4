@@ -42,7 +42,7 @@
               <div class="border"></div>
                 <div class="contact-form margin-top">
                     @foreach($currentRegKids as $regkid)
-                       <form method='post' action='/childregister/delete/{{$regkid->id}}'>
+                       <form method='post' action='/childregister/{{$regkid->id}}'>
                           {!! csrf_field() !!}
                           <input name="_method" type="hidden" value="DELETE">
                          

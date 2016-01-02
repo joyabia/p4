@@ -114,7 +114,7 @@ public function cancelkidreg()
     {
        $kid = \p4\Kid::findOrFail($id);       
        $kid->delete();
-       return  redirect('/childregister');
+       return  redirect('/cancelkidreg');
         
     }
 }

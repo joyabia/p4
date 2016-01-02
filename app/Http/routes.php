@@ -34,12 +34,22 @@ Route::get('/signattendance', 'AttendanceController@create');
 Route::post('/submitattendance', 'AttendanceController@store');
 
 //submit Child registration forms
-Route::get('/childregister', 'RegistrationController@create' );
+Route::resource('/childregister', 'RegistrationController' );
 
 //submit Child registration forms
-Route::get('/cancelkidreg', 'RegistrationController@cancelkidreg' );
+//Route::post('/childregister', 'RegistrationController@store' );
 
-Route::resource('/childregister/delete', 'RegistrationController@destroy' );
+//show delete Child registration forms
+Route::get('/cancelkidreg', function(){
+     //get the chidren attached to the user account
+        $user = Auth::user();
+        
+        $currentRegKids = $user->kids;
+        return view('/cancelregform')->with('currentRegKids', $currentRegKids);
+    
+} );
+
+Route::post('/childregister/delete', 'RegistrationController@destroy' );
 
 Route::get('/confirm-login-worked', function() {
 

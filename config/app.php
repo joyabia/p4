@@ -147,7 +147,7 @@ return [
         p4\Providers\EventServiceProvider::class,
         p4\Providers\RouteServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
-
+        
     ],
 
     /*
@@ -199,7 +199,7 @@ return [
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Form' => Illuminate\Html\HtmlFacade::class,
         'Html' => Illuminate\Html\FormFacade::class,
-
+        
     ],
 
 ];
